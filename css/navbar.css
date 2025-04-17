@@ -1,0 +1,134 @@
+.navbar{
+    background-color: var(--bg-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.navbar-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 a{
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 30px;
+    font-family:"Open Sans" , "system-ui" ,"-apple-system" ,"Segoe UI", "Roboto" ,"Helvetica Neue" ,"Arial" ,"Noto Sans" ,"Liberation Sans" ,"sans-serif" ,"Apple Color Emoji" ,"Segoe UI Emoji" ,"Segoe UI Symbol" ,"Noto Color Emoji";
+}
+
+.logo h1 span{
+    color: var(--primary-color);
+}
+
+.hero-links{
+    display: none;
+}
+
+.hero-links ul{
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.hero-links ul li{
+    padding: 0 15px;
+    position: relative;
+}
+
+.hero-links ul li a{
+    text-decoration: none;
+    color: var(--text-color-light);
+    font-size: 18px;
+    font-family:"Open Sans" , "system-ui" ,"-apple-system" ,"Segoe UI", "Roboto" ,"Helvetica Neue" ,"Arial" ,"Noto Sans" ,"Liberation Sans" ,"sans-serif" ,"Apple Color Emoji" ,"Segoe UI Emoji" ,"Segoe UI Symbol" ,"Noto Color Emoji";
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.hero-links ul li a::after{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: var(--primary-color);
+    left: 15px;
+    bottom: -7px;
+}
+
+.hero-links ul li a:hover{
+    color: var(--text-color);
+}
+
+.hero-links ul li a:hover:not([class="active"])::after{
+    animation: slide-links 0.5s forwards;
+    color: var(--text-color);
+}
+
+@keyframes slide-links{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 70%;
+    }
+}
+
+.hero-links ul li a.active {
+    color: var(--text-color);
+}
+  
+.hero-links ul li a.active::after {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 2px;
+    background-color: var(--primary-color);
+    left: 15px;
+    bottom: -7px;
+}
+
+.light-mode{
+    font-size: 25px;
+    color: var(--text-color);
+    font-weight: 900;
+    display: flex;
+}
+
+.light-mode .dark{
+    cursor: pointer;
+}
+
+.light-mode .light{
+    display: none;
+    cursor: pointer;
+}
+
+#mode:checked ~ .dark{
+    display: none;
+}
+
+#mode:checked ~ .light{
+    display: block;
+}
+
+.menu-icon{
+    padding-left: 20px;
+}
+
+.menu-icon i{
+    font-size: 25px;
+    color: var(--text-color);
+    font-weight: 900;
+}
+
+@media screen and (min-width: 1200px){
+    .hero-links{
+        display: block;
+    }
+    .menu-icon{
+        display: none;
+    }
+}

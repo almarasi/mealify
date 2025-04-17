@@ -1,0 +1,41 @@
+:root {
+    /* Primary Colors */
+    --primary-color: #ce1212;
+    --primary-color-hover: #b30000;
+    
+    /* Text Colors */
+    --text-color: #212529;
+    --text-color-light: #6c757d;
+    --text-color-white: #ffffff;
+    
+    /* Background Colors */
+    --bg-color: #ffffff;
+    --bg-color-dark: #000000;
+    --bg-color-light: #EEEEEE;
+    --bg-color-gray: #222222;
+    
+    /* Border Colors */
+    --border-color: #dee2e6;
+    
+    /* Overlay Colors */
+    --overlay-color: rgba(0, 0, 0, 0.6);
+    
+    /* Link Colors */
+    --link-color: #212529;
+    --link-hover-color: #ce1212;
+    
+    /* Button Colors */
+    --button-bg: #ce1212;
+    --button-bg-hover: #b30000;
+    --button-text: #ffffff;
+    
+    /* Form Colors */
+    --input-border: #dee2e6;
+    --input-focus-border: #ce1212;
+    
+    /* Social Media Colors */
+    --social-bg: #ffffff;
+    --social-bg-hover: #ce1212;
+    --social-icon: #212529;
+    --social-icon-hover: #ffffff;
+} 
