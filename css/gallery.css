@@ -1,0 +1,149 @@
+#gallery{
+    background-color: var(--bg-color-light);
+    padding-top: 100px;
+}
+
+.gallery-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.gallery-text {
+    h2 {
+        font-size: 1rem;
+        color: var(--text-color-light);
+        margin: 0;
+        font-weight: 400;
+        font-family: "Open Sans", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "Liberation Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+
+    p {
+        font-size: 3rem;
+        color: var(--text-color);
+        font-family: "Amatic SC", sans-serif;
+        font-weight: 500;
+        margin: 0;
+        margin-bottom: 40px;
+
+        span {
+            color: var(--primary-color);
+        }
+    }
+}
+.gallery-cards {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 80px;
+
+    .card {
+        width: 100%;
+        border: 4px solid var(--gallery-border-color);
+        position: relative;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--overlay-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(100%);
+            transition: all 0.4s linear;
+            color: var(--text-color-white);
+
+            h5 {
+                font-size: 1.5rem;
+                margin-bottom: 4px;
+                font-family: "Open Sans", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "Liberation Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            }
+
+            p {
+                margin: 0;
+                font-size: 1rem;
+                font-family: "Open Sans", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "Liberation Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            }
+        }
+
+        &:hover .gallery-layer {
+            transform: translateY(0%);
+        }
+    }
+}
+
+.layer-text{
+    width: 80%;
+}
+
+@media screen and (min-width: 768px) {
+    .gallery-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 250px;
+        gap: 15px;
+        align-items: stretch;
+    }
+
+    .item-1 {
+        grid-row: span 1;
+        order: 0;
+    }
+
+    .item-2 {
+        grid-row: span 2 ;
+        order: 1;
+
+    }
+
+    .item-3 {
+        grid-row: span 1;
+        order: 2;
+
+    }
+
+    .item-4 {
+        grid-row: span 2;
+        order: 3;
+    }
+
+    .item-5 {
+        grid-column: span 1;
+        order: 4;
+
+    }
+
+    .item-6 {
+        grid-row: span 1;
+        order: 6;
+
+    }
+
+    .item-7 {
+        grid-row: span 1;
+        order: 5;
+
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .gallery-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 250px;
+        gap: 15px;
+    }
+}

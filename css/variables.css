@@ -1,0 +1,106 @@
+:root {
+    /* Primary Colors */
+    --primary-color: #ce1212;
+    --primary-color-hover: #b30000;
+    
+    /* Text Colors */
+    --text-color: #212529;
+    --text-color-light: #6c757d;
+    --text-color-white: #ffffff;
+    
+    /* Background Colors */
+    --bg-color: #ffffff;
+    --bg-color-dark: #000000;
+    --bg-color-light: #EEEEEE;
+    --bg-color-gray: #222222;
+    --chef-card-bg-color: #ffffff;
+
+
+    /* form color */
+    --form-bg: #ffffff;
+    --input-text-color: #212529;
+
+    /* contact card color */
+    --contact-card-bg: #EEEEEE;
+    
+    /* Border Colors */
+    --border-color: #dee2e6;
+    --gallery-border-color: #ffffff;
+    
+    /* Overlay Colors */
+    --overlay-color: rgba(0, 0, 0, 0.6);
+    
+    /* Link Colors */
+    --link-color: #212529;
+    --link-hover-color: #ce1212;
+    
+    /* Button Colors */
+    --button-bg: #ce1212;
+    --button-bg-hover: #b30000;
+    --button-text: #ffffff;
+    
+    /* Form Colors */
+    --input-border: #dee2e6;
+    --input-focus-border: #ce1212;
+    
+    /* Social Media Colors */
+    --social-bg: #ffffff;
+    --social-bg-hover: #ce1212;
+    --social-icon: #212529;
+    --social-icon-hover: #ffffff;
+
+    /* linear gradient colors*/
+    --linear-gradient-color: linear-gradient( #ffffff 60%, #FAFAFA 10%);
+} 
+
+:root:has(#mode:checked){
+        /* Primary Colors */
+        --primary-color: #C17D1F;
+        --primary-color-hover: #D78C22;
+        
+        /* Text Colors */
+        --text-color: #ffffff;
+        --text-color-light: #999999;
+        --text-color-white: #ffffff;
+        
+        /* Background Colors */
+        --bg-color: #1A1A1A;
+        --bg-color-dark: #000000;
+        --bg-color-light: #252525;
+        --bg-color-gray: #333333;
+        --chef-card-bg-color: #161616;
+        
+        /* contact card color */
+        --contact-card-bg: #0C0C0C;
+        
+        /* form color*/
+        --form-bg: #171717;
+        
+        /* Border Colors */
+        --border-color: #333333;
+        
+        /* Overlay Colors */
+        --overlay-color: rgba(0, 0, 0, 0.7);
+        
+        /* Link Colors */
+        --link-color: #ffffff;
+        --link-hover-color: #C17D1F;
+        
+        /* Button Colors */
+        --button-bg: #C17D1F;
+        --button-bg-hover: #D78C22;
+        --button-text: #ffffff;
+        
+        /* Form Colors */
+        --input-border: #333333;
+        --input-focus-border: #C17D1F;
+        
+        /* Social Media Colors */
+        --social-bg: #222222;
+        --social-bg-hover: #D78C22;
+        --social-icon: #ffffff;
+        --social-icon-hover: #ffffff;
+
+    /* linear gradient colors*/
+    --linear-gradient-color: linear-gradient( #202020 60%, #202020 10%);
+}

@@ -1,0 +1,183 @@
+#contact {
+    padding-top: 80px;
+    background-image: var(--linear-gradient-color);
+
+    .contact-content {
+        padding-bottom: 30px;
+    }
+
+    .contact-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+
+        h2 {
+            font-size: 1rem;
+            color: var(--text-color-light);
+            margin: 0px;
+            font-weight: 400;
+            font-family:"Open Sans" , "system-ui" ,"-apple-system" ,"Segoe UI", "Roboto" ,"Helvetica Neue" ,"Arial" ,"Noto Sans" ,"Liberation Sans" ,"sans-serif" ,"Apple Color Emoji" ,"Segoe UI Emoji" ,"Segoe UI Symbol" ,"Noto Color Emoji";
+        }
+
+        p {
+            font-size: 3rem;
+            color: var(--text-color);
+            font-family: "Amatic SC" ,sans-serif;
+            font-weight: 500;
+            margin: 0px;
+            margin-bottom: 40px;
+
+            span {
+                color: var(--primary-color);
+            }
+        }
+    }
+
+    .map {
+        width: 100%;
+
+        iframe {
+            width: 100%;
+            max-height: 300px;
+        }
+    }
+
+    .conatact-information {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-block: 20px;
+
+        .contact-card {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            background-color: var(--contact-card-bg);
+
+            .icon {
+                width: 50px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                background-color: var(--primary-color);
+                color: var(--text-color-white);
+
+                i {
+                    font-size: 1.1rem;
+                }
+            }
+
+            .text {
+                margin-left: 10px;
+
+                h3 {
+                    font-size: 1.3rem;
+                    color: var(--text-color-light);
+                    font-family:"Open Sans" , "system-ui" ,"-apple-system" ,"Segoe UI", "Roboto" ,"Helvetica Neue" ,"Arial" ,"Noto Sans" ,"Liberation Sans" ,"sans-serif" ,"Apple Color Emoji" ,"Segoe UI Emoji" ,"Segoe UI Symbol" ,"Noto Color Emoji";
+                    font-weight: 700;
+                    margin: 0px;
+                }
+
+                p {
+                    font-size: 1rem;
+                    color: var(--text-color);
+                    font-family:"Open Sans" , "system-ui" ,"-apple-system" ,"Segoe UI", "Roboto" ,"Helvetica Neue" ,"Arial" ,"Noto Sans" ,"Liberation Sans" ,"sans-serif" ,"Apple Color Emoji" ,"Segoe UI Emoji" ,"Segoe UI Symbol" ,"Noto Color Emoji";
+                    margin: 5px 0 5px 0;
+                    font-weight: 400;
+
+                    span {
+                        font-weight: bolder;
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-form {
+        background-color: var(--form-bg);
+        box-shadow: 0px 0px 5px var(--overlay-color);
+        padding-block: 15px;
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px;
+
+            input {
+                padding: 17px 0px 17px 10px;
+                margin-bottom: 15px;
+                font-size: .8rem;
+                color: var(--input-text-color);
+                font-family:"Open Sans" , "system-ui" ,"-apple-system" ,"Segoe UI", "Roboto" ,"Helvetica Neue" ,"Arial" ,"Noto Sans" ,"Liberation Sans" ,"sans-serif" ,"Apple Color Emoji" ,"Segoe UI Emoji" ,"Segoe UI Symbol" ,"Noto Color Emoji";
+                border: 2px solid var(--border-color);
+                width: 100%;
+
+                &:focus {
+                    border: 2px solid var(--primary-color);
+                    outline: var(--primary-color);
+                }
+            }
+
+            textarea {
+                border: 2px solid var(--border-color);
+                padding: 17px 0px 17px 10px;
+                width: 100%;
+
+                &:focus {
+                    border: 2px solid var(--primary-color);
+                    outline: var(--primary-color);
+                }
+            }
+
+            .button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
+
+            button {
+                padding: 13px 0px 13px 10px;
+                margin-top: 30px;
+                font-size: 1rem;
+                color: var(--text-color-white);
+                font-family:"Open Sans" , "system-ui" ,"-apple-system" ,"Segoe UI", "Roboto" ,"Helvetica Neue" ,"Arial" ,"Noto Sans" ,"Liberation Sans" ,"sans-serif" ,"Apple Color Emoji" ,"Segoe UI Emoji" ,"Segoe UI Symbol" ,"Noto Color Emoji";
+                background-color: var(--primary-color);
+                border: none;
+                cursor: pointer;
+                width: 180px;
+                border-radius: 25px;
+                transition: all .3s ease-out;
+
+                &:hover {
+                    background-color: var(--primary-color-hover);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #contact {
+        .contact-card {
+            flex: 1 1 43%;
+            height: 70px;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #contact {
+        .contact-form form .wd-50 {
+            width: 48%;
+        }
+    }
+}

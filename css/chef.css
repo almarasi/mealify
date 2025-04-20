@@ -1,0 +1,153 @@
+#chef{
+    padding: 70px 0px;
+    background-color: var(--bg-color);
+}
+.chef-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.chef-text{
+    h2{
+        font-size: 0.9rem;
+        color: var(--text-color-light);
+        margin: 0px;
+        font-weight: 400;
+        font-family:"Open Sans" , "system-ui" ,"-apple-system" ,"Segoe UI", "Roboto" ,"Helvetica Neue" ,"Arial" ,"Noto Sans" ,"Liberation Sans" ,"sans-serif" ,"Apple Color Emoji" ,"Segoe UI Emoji" ,"Segoe UI Symbol" ,"Noto Color Emoji";
+    }
+    p{
+        font-size: 3rem;
+        color: var(--text-color);
+        font-family: "Amatic SC" ,sans-serif;
+        font-weight: 500;
+        margin: 0px;
+        margin-bottom: 40px;
+        span{
+            color: var(--primary-color);
+        }
+    }
+}
+.chef-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    .card{
+        width: 100%;
+        background-color: var(--chef-card-bg-color);
+        box-shadow: 0px 0px 20px var(--overlay-color);
+        border-radius: 20px;
+        position: relative;
+        /* border: 1px solid red; */
+        overflow: hidden;
+        transition: transform 0.3s ease-out;
+        &:hover{
+            transform: scale(1.05);
+        }
+        img{
+            width: 100%;
+            border-radius: 20px 20px 0px 0px;
+            /* border: 2px solid red; */
+            &[alt="layer"]{
+                /* border: 2px solid red; */
+                display: block;
+                position: absolute;
+                bottom: -5px;
+                background-size: cover;
+            }
+            &[alt="layer2"]{
+                /* border: 2px solid red; */
+                position: absolute;
+                bottom: -5px;
+                background-size: cover;
+                display: none;
+            }
+        }
+        .chef-layer{
+            background-color: var(--bg-color-light);
+            position: absolute;
+            top: 40px;
+            right: 10px;
+            border-radius: 10px;
+            transform: translateX(120%);
+            transition: all .5s linear;
+        }
+        &:hover .chef-layer{
+            animation: slide 0.5s ease-out forwards;
+        }
+    }
+}
+.chef-img{
+    width: 100%;
+    position: relative;
+}
+.chef-layer{
+    ul{
+        list-style: none;
+        padding: 0;
+        li{
+            padding: 5px;
+            a{
+                padding-inline: 10px;
+                color: var(--text-color-light);
+                font-size: 1.2rem;
+                transition: all .3s linear;
+                &:hover{
+                    color: var(--text-color);
+                }
+            }
+        }
+    }
+}
+.card-text{
+    padding: 10px 30px;
+    h3{
+        font-size: 1.5rem;
+        color: var(--text-color);
+        font-family:"Open Sans" , "system-ui" ,"-apple-system" ,"Segoe UI", "Roboto" ,"Helvetica Neue" ,"Arial" ,"Noto Sans" ,"Liberation Sans" ,"sans-serif" ,"Apple Color Emoji" ,"Segoe UI Emoji" ,"Segoe UI Symbol" ,"Noto Color Emoji";
+        font-weight: 500;
+        margin: 0px;
+    }
+    p{
+        font-size: 1rem;
+        color: var(--text-color-light);
+        font-family:"Open Sans" , "system-ui" ,"-apple-system" ,"Segoe UI", "Roboto" ,"Helvetica Neue" ,"Arial" ,"Noto Sans" ,"Liberation Sans" ,"sans-serif" ,"Apple Color Emoji" ,"Segoe UI Emoji" ,"Segoe UI Symbol" ,"Noto Color Emoji";
+        margin: 10px 0 10px 0;
+    }
+}
+:root:has(#mode:checked){
+    .chef-cards .card img[alt="layer2"]{
+        display: block;
+    }
+    .chef-cards .card img[alt="layer"]{
+        display: none;
+    }
+}
+@keyframes slide {
+    from {
+      transform: translateX(120%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: .8;
+    }
+}
+@media screen and (min-width: 650px) {
+    .chef-cards .card{
+        width: 80%;
+    }
+}
+@media screen and (min-width: 768px) {
+    .chef-cards .card{
+        width: 45%;
+    }
+}
+@media screen and (min-width: 992px) {
+    .chef-cards .card{
+        width: 31%;
+    }
+}

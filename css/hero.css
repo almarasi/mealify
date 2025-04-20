@@ -1,0 +1,170 @@
+#hero{
+    background-color: var(--bg-color-light);
+    padding-top: 120px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid #000; */
+}
+.hero-text{
+    width: 100%;
+    text-align: center;
+    order: 1;
+    margin: 20px 0;
+
+    h2{
+        color: var(--text-color);
+        font-family: "Amatic SC" ,sans-serif;
+        font-size: 65px;
+        font-weight: 700;
+        margin: 0;
+    }
+    p{
+        color: var(--text-color-light);
+        font-family:"Open Sans" , "system-ui" ,"-apple-system" ,"Segoe UI", "Roboto" ,"Helvetica Neue" ,"Arial" ,"Noto Sans" ,"Liberation Sans" ,"sans-serif" ,"Apple Color Emoji" ,"Segoe UI Emoji" ,"Segoe UI Symbol" ,"Noto Color Emoji";
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+}
+.hero-img {
+    width: 100%;
+
+    img {
+        width: 100%;
+        filter: drop-shadow(2px 4px 6px var(--bg-color-dark));
+        transition: all 0.3s ease;
+
+        &:hover {
+            animation: shake 0.5s linear infinite;
+            filter: drop-shadow(4px 8px 12px var(--bg-color-dark));
+        }
+    }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translate(-3px ,-3px) rotate(-1deg); }
+    50% { transform: translate(3px ,3px) rotate(1deg); }
+    75% { transform: translate(-3px ,-3px) rotate(2deg); }
+    100% { transform: translateX(0); }
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    gap: 40px;
+
+    .book {
+        background-color: var(--button-bg);
+        padding: 10px 25px;
+        border-radius: 25px;
+        font-family: "Open Sans", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "Liberation Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 16px;
+        transition: all 0.3s ease-in-out;
+
+        a {
+            text-decoration: none;
+            color: var(--button-text);
+        }
+
+        &:hover {
+            background-color: var(--button-bg-hover);
+        }
+    }
+
+    .video {
+        a {
+            text-decoration: none;
+            color: var(--text-color);
+            transition: all 0.3s ease-in-out;
+            font-family: "Open Sans", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "Liberation Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &:hover a {
+            color: var(--primary-color);
+        }
+    }
+}
+
+.youtube-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    margin-right: 3px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
+                linear-gradient(90deg, var(--primary-color) 50%, var(--bg-color-light) 50%) border-box;
+    border: 7px solid transparent;
+
+    & + div {
+        font-size: 18px;
+        font-family: "Open Sans", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "Liberation Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-weight: 600;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .hero-img{
+        width: 85%;
+        margin-bottom: 40px;     
+    }
+    #hero{
+        padding-top: 150px;
+    }
+
+ }
+
+ @media screen and (min-width: 992px){
+    #hero{
+        /* padding-bottom: 115px; */
+        height: 85vh;
+        padding-top: 110px;
+    }
+    .hero-content{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        /* border: 1px solid #000; */
+    
+    }
+    .hero-text{
+        width: 40%;
+        text-align: left;
+        order: 0;
+        margin: 0px 0px;
+    }
+    .hero-img{
+        width: 40%;
+        margin-bottom: 40px;
+        
+    }
+    .buttons{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 20px 0;
+        gap: 40px;
+
+        .book{
+            border-top-left-radius: 0px;
+        }  
+    }
+}
+ 

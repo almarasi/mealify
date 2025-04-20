@@ -1,0 +1,187 @@
+.navbar {
+    background-color: var(--bg-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    .navbar-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* border: 1px solid #000; */
+    }
+}
+
+.logo {
+    h1 a {
+        text-decoration: none;
+        color: var(--text-color);
+        font-size: 30px;
+        font-family: "Open Sans", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "Liberation Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+
+    h1 span {
+        color: var(--primary-color);
+    }
+}
+
+.hero-links {
+    display: none;
+
+    ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+
+        li {
+            padding: 0 15px;
+            position: relative;
+
+            a {
+                text-decoration: none;
+                color: var(--text-color-light);
+                font-size: 18px;
+                font-family: "Open Sans", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "Liberation Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+                font-weight: 600;
+                transition: all 0.3s ease;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 0%;
+                    height: 2px;
+                    background-color: var(--primary-color);
+                    left: 15px;
+                    bottom: -7px;
+                }
+
+                &:hover {
+                    color: var(--text-color);
+
+                    &::after {
+                        animation: slide-links 0.5s forwards;
+                    }
+                }
+                &[href="#hero"] {
+                    color: var(--text-color);
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 70%;
+                        height: 2px;
+                        background-color: var(--primary-color);
+                    }
+                }
+
+                /* &.active {
+                    color: var(--text-color);
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 70%;
+                        height: 2px;
+                        background-color: var(--primary-color);
+                        left: 15px;
+                        bottom: -7px;
+                    }
+                } */
+                
+            } 
+        }
+    }
+}
+
+
+:root:has(#hero:target) .hero-links ul li a[href="#hero"],
+:root:has(#chef:target) .hero-links ul li a[href="#chef"],
+:root:has(#gallery:target) .hero-links ul li a[href="#gallery"],
+:root:has(#contact:target) .hero-links ul li a[href="#contact"]{
+    color: var(--text-color);
+}
+
+:root:has(#hero:target) .hero-links ul li a:not([href="#hero"]),
+:root:has(#chef:target) .hero-links ul li a:not([href="#chef"]),
+:root:has(#gallery:target) .hero-links ul li a:not([href="#gallery"]),
+:root:has(#contact:target) .hero-links ul li a:not([href="#contact"]){
+    color: var(--text-color-light);
+}
+
+:root:has(#hero:target) .hero-links ul li a[href="#hero"]::after,
+:root:has(#chef:target) .hero-links ul li a[href="#chef"]::after,
+:root:has(#gallery:target) .hero-links ul li a[href="#gallery"]::after,
+:root:has(#contact:target) .hero-links ul li a[href="#contact"]::after{
+    width: 70%;
+}
+
+:root:has(#hero:target) .hero-links ul li a:not([href="#hero"])::after,
+:root:has(#chef:target) .hero-links ul li a:not([href="#chef"])::after,
+:root:has(#gallery:target) .hero-links ul li a:not([href="#gallery"])::after,
+:root:has(#contact:target) .hero-links ul li a:not([href="#contact"])::after{
+    width: 0%;
+}
+
+
+.light-mode {
+    font-size: 25px;
+    color: var(--text-color);
+    font-weight: 900;
+    display: flex;
+
+    .dark {
+        cursor: pointer;
+        width: 30px;
+    }
+
+    .light {
+        display: none;
+        cursor: pointer;
+        width: 30px;
+    }
+    label{
+        cursor: pointer;
+    }
+
+    #mode:checked ~ .dark {
+        display: none;
+    }
+
+    #mode:checked ~ .light {
+        display: block;
+    }
+
+    .menu-icon {
+        padding-left: 15px;
+
+        i {
+            font-size: 25px;
+            color: var(--text-color);
+            font-weight: 900;
+        }
+    }
+}
+
+@keyframes slide-links {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .navbar {
+        padding-bottom: 5px;
+    }
+
+    .hero-links {
+        display: block;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+}

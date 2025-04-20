@@ -1,0 +1,102 @@
+body{
+    position: relative;
+}
+
+#hero{
+    position: relative;
+}
+
+.overlay{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 150;
+    display: none;
+}
+
+aside{
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 200;
+    transform: translateX(100%);
+    /* border: 2px solid red; */
+    background-color: var(--bg-color);
+    width: 70%;
+    height: 100vh;
+
+    label{
+        position: fixed;
+        font-size: 25px;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        /* border: 2px solid blue; */
+        margin: 10px;
+        color: var(--text-color);
+    }
+
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 50px 0px;
+        margin: 0;
+        
+
+        li {
+            padding: 15px 10px;
+            position: relative;
+
+            a {
+                text-decoration: none;
+                color: var(--text-color-light);
+                font-size: 18px;
+                font-family: "Open Sans", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "Liberation Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+                font-weight: 600;
+                transition: all 0.3s ease;
+
+               
+                &:hover {
+                    color: var(--text-color);
+                }
+            }
+        }
+    }
+}
+
+
+:root:has(#mobile-menu:checked) .overlay {
+    display: block;
+}
+
+:root:has(#mobile-menu:checked) aside {
+    transform: translateX(0%);
+    transition: all 0.3s ease;
+}
+
+:root:has(#aside-x:checked) aside {
+    transform: translateX(100%);
+    transition: all 0.3s ease;
+}
+:root:has(#aside-x:checked) .overlay {
+    display: none;
+}
+
+/* :root:has(#hero:target) aside,
+:root:has(#chef:target) aside,
+:root:has(#gallery:target) aside,
+:root:has(#contact:target) aside{
+    transform: translateX(100%);
+}
+
+:root:has(#hero:target) .overlay,
+:root:has(#chef:target) .overlay,
+:root:has(#gallery:target) .overlay,
+:root:has(#contact:target) .overlay{
+    display: none;
+} */
